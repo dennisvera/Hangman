@@ -12,6 +12,8 @@
 		E18C633A2131FB7400F0D152 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E18C63382131FB7400F0D152 /* Main.storyboard */; };
 		E18C633C2131FBB300F0D152 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E18C633B2131FBB300F0D152 /* Assets.xcassets */; };
 		E18C633F2131FBB300F0D152 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E18C633D2131FBB300F0D152 /* LaunchScreen.storyboard */; };
+		E18C634D2131FFF400F0D152 /* ReachClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18C634C2131FFF400F0D152 /* ReachClient.swift */; };
+		E18C63502132019500F0D152 /* ReachDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18C634F2132019500F0D152 /* ReachDataStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		E18C633B2131FBB300F0D152 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E18C633E2131FBB300F0D152 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E18C63402131FBB300F0D152 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E18C634C2131FFF400F0D152 /* ReachClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachClient.swift; sourceTree = "<group>"; };
+		E18C634F2132019500F0D152 /* ReachDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachDataStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +59,8 @@
 			isa = PBXGroup;
 			children = (
 				E18C63462131FC2200F0D152 /* Application Delegate */,
+				E18C634B2131FF7400F0D152 /* Network Managers */,
+				E18C634E2132015B00F0D152 /* Data Managers */,
 				E18C63472131FC3E00F0D152 /* View Controllers */,
 				E18C63482131FC4900F0D152 /* Storyboards */,
 				E18C63492131FC6400F0D152 /* Resources */,
@@ -102,6 +108,22 @@
 				E18C63402131FBB300F0D152 /* Info.plist */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E18C634B2131FF7400F0D152 /* Network Managers */ = {
+			isa = PBXGroup;
+			children = (
+				E18C634C2131FFF400F0D152 /* ReachClient.swift */,
+			);
+			path = "Network Managers";
+			sourceTree = "<group>";
+		};
+		E18C634E2132015B00F0D152 /* Data Managers */ = {
+			isa = PBXGroup;
+			children = (
+				E18C634F2132019500F0D152 /* ReachDataStore.swift */,
+			);
+			path = "Data Managers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,7 +198,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E18C63372131FB7300F0D152 /* ViewController.swift in Sources */,
+				E18C63502132019500F0D152 /* ReachDataStore.swift in Sources */,
 				E18C63352131FB7300F0D152 /* AppDelegate.swift in Sources */,
+				E18C634D2131FFF400F0D152 /* ReachClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,7 +346,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K24N6NL7FA;
-				INFOPLIST_FILE = HangMan/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/HangMan/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -340,7 +364,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K24N6NL7FA;
-				INFOPLIST_FILE = HangMan/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/HangMan/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
