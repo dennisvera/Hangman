@@ -12,6 +12,24 @@ class ReachDataStore {
     
     // MARK: - Properties
     
-    typealias JSON = [[String : Any]]
-
+    static let sharedInstance = ReachDataStore()
+    var words = [String]()
+    
+    // MARK: - Requesting & Parsing Data
+    
+    func fetchWords(completionHandler: @escaping (Bool) -> ()) {
+        
+        ReachClient.fetchReachData { (words) in
+            for word in words {
+                self.words.append(word)
+               
+                print(self.words)
+            }
+        }
+        
+        if self.words.count > 0 {
+            completionHandler(true)
+        }
+    }
+    
 }

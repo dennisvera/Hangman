@@ -10,9 +10,11 @@ import Foundation
 
 class ReachClient {
     
+    typealias ReachData = [String]
+    
     // MARK: - Requesting Data
     
-    class func fetchReachData() {
+    class func fetchReachData(completionHandler: @escaping (ReachData) -> ()) {
         let urlString = "http://app.linkedin-reach.io/words"
         
         guard let url = URL(string: urlString) else { fatalError("Invalid URL") }
@@ -30,11 +32,10 @@ class ReachClient {
             if let error = error {
                 print("Unable To Fetch Reach Data: \(error)\n")
             } else {
-                guard let data = data else { fatalError("Unable to get data") }
+                guard let data = data else { fatalError("Unable to get data: \(String(describing: error?.localizedDescription))") }
                 
-                guard let words = String(data: data, encoding: .utf8) else { return }
-                
-                print(words)
+                let reachData = String(decoding: data, as: UTF8.self)
+                completionHandler([reachData])
             }
         }
         

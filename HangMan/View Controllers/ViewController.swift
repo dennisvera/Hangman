@@ -10,11 +10,24 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    // MARK: - Properties
+
+    let dataStore = ReachDataStore.sharedInstance
+    
+    // MARK: - View Life Cycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        ReachClient.fetchReachData()
+        dataStore.fetchWords { (success) in
+            if success {
+                print(self.dataStore.words.count)
+                print(self.dataStore.words)
+            }
+        }
     }
+    
+    
     
     
 }
